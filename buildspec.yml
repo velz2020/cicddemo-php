@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 8.3
+    commands:
+      - php -v
+      - composer --version
+
+  pre_build:
+    commands:
+      - composer install --no-dev --optimize-autoloader
+
+  build:
+    commands:
+      - echo "Building PHP application..."
+
+  post_build:
+    commands:
+      - echo "Build completed"
+
+artifacts:
+  files:
+    - '**/*'
+  name: php-app-build
