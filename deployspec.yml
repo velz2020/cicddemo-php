@@ -1,0 +1,16 @@
+version: 0.1
+
+files:
+  - source: /
+    destination: /var/www/html/my-ci4-project
+
+scripts:
+  BeforeDeploy:
+    - location: preScript.sh
+      timeout: 300
+      runas: root
+
+  AfterDeploy:
+    - location: postScript.sh
+      timeout: 300
+      runas: root
