@@ -19,6 +19,14 @@ phases:
   post_build:
     commands:
       - echo "Build completed"
+      - echo "================================="
+      - echo "BUILD DEBUG"
+      - echo "Commit: $CODEBUILD_RESOLVED_SOURCE_VERSION"
+      - echo "Date: $(date)"
+      - echo "================================="
+      - echo "Commit: $CODEBUILD_RESOLVED_SOURCE_VERSION" > build-info.txt
+      - echo "Build time: $(date)" >> build-info.txt
+      - echo "Build hostname: $(hostname)" >> build-info.txt
 
 artifacts:
   files:

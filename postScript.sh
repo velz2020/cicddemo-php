@@ -11,6 +11,25 @@ echo "========================================"
 
 cd "$APP_DIR"
 
+echo "========================================"
+echo "DEPLOYMENT VERIFICATION"
+echo "========================================"
+
+echo "Deployment directory:"
+pwd
+
+echo "Directory contents:"
+ls -lah
+
+echo "Build information:"
+if [ -f "build-info.txt" ]; then
+    cat build-info.txt
+else
+    echo "ERROR: build-info.txt NOT FOUND"
+fi
+
+echo "========================================"
+
 # --------------------------------------------------
 # CodeIgniter writable permissions
 # --------------------------------------------------
