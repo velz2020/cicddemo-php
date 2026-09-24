@@ -2,7 +2,7 @@
 
 set -e
 
-APP_DIR="/var/www/html/my-ci4-project"
+APP_DIR="/var/www/cicd-demo/backend"
 
 echo "========================================"
 echo "Starting post-deployment configuration"

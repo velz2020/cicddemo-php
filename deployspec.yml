@@ -2,7 +2,7 @@ version: 0.1
 
 files:
   - source: /
-    destination: /var/www/html/my-ci4-project
+    destination: /var/www/cicd-demo/backend
 
 scripts:
   BeforeDeploy:

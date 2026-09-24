@@ -18,15 +18,17 @@ phases:
 
   post_build:
     commands:
-      - echo "Build completed"
-      - 'echo "================================="'
-      - 'echo "BUILD DEBUG"'
-      - 'echo "Commit: $CODEBUILD_RESOLVED_SOURCE_VERSION"'
-      - 'echo "Date: $(date)"'
-      - 'echo "================================="'
-      - 'echo "Commit: $CODEBUILD_RESOLVED_SOURCE_VERSION" > build-info.txt'
-      - 'echo "Build time: $(date)" >> build-info.txt'
-      - 'echo "Build hostname: $(hostname)" >> build-info.txt'
+      - echo "========================================"
+      - echo "PHP APPLICATION BUILD COMPLETED"
+      - echo "========================================"
+      - 'COMMIT_MESSAGE=$(git log -1 --pretty=%B)'
+      - 'echo "Build Status: SUCCESS" > build-info.txt'
+      - 'echo "Commit SHA: $CODEBUILD_RESOLVED_SOURCE_VERSION" >> build-info.txt'
+      - 'echo "Commit Message: $COMMIT_MESSAGE" >> build-info.txt'
+      - 'echo "Build Time: $(date)" >> build-info.txt'
+      - echo "========================================"
+      - cat build-info.txt
+      - echo "========================================"
 
 artifacts:
   files:
