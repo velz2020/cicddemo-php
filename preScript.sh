@@ -3,7 +3,7 @@
 set -e
 
 APP_DIR="/var/www/cicd-demo/backend"
-BACKUP_ROOT="/var/www/cicd-demo/backend/deployment-backups"
+BACKUP_ROOT="/var/www/cicd-demo/backend-deployment-backups"
 
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 BACKUP_DIR="${BACKUP_ROOT}/backend_${TIMESTAMP}"
